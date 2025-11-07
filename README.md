@@ -24,8 +24,7 @@ This project was built with:
 + `e.preventDefault()` stops the default form submission so it can be validated first
 + `form.setAttribute('novalidate', '')` disables browser's built-in validation popup
 + Event flow: Prevent first, validate, then manually submit if valid
-```
-javascript
+```javascript
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // Stop submission
     
