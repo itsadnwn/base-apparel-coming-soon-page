@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* universal */
+:root {
+    /* typography */
+    --fs-1: 4rem;
+    --fw--1-light: 300;
+    --fw-1-semibold: 600;
+    --ls-1: 1.09375rem;
+    --lh-1-100: 100%;
+    --lh-1-110: 110%;
+
+    --fs-2: 2.5rem;
+    --fw-2-light: 300;
+    --fw-2-semibold: 600;
+    --lh-2: 100%;
+    --ls-2: 0.625rem;
+
+    --fs-3: 1rem;
+    --fw-3: 400;
+    --lh-3: 215%;
+    
+    --fs-4: 0.875rem;
+    --fw-4: 400;
+    --lh-4: 155%;
+
+    --fs-5: 0.8125rem;
+    --fw-5: 400;
+    --lh-5: 215%;
+
+    /* colors */
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+    --gray-900: rgb(66, 58, 58);
+    --red-400: rgb(249, 100, 100);
+    --pink-400: rgb(206, 152, 152);
+    --gradient-1: linear-gradient(to right,#f8bfbf, #ee8b8b);
+    --gradient-2: linear-gradient(to right, #fff, #fff4f4);
+    --gradient-3: linear-gradient(to right, #fff1f1, #fff);
+
+    /* spacing */
+    --spacing-8: 0.5rem;
+    --spacing-16: 1rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+    --spacing-40: 2.5rem;
+    --spacing-64: 4rem;
+    --spacing-80: 5rem;
+    --spacing-88: 5.5rem;
+    --spacing-136: 8.5rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    max-width: 1200px;
+}
+
+img.hero-desktop {
+    display: none;
+}
+
+img.hero-mobile {
+    width: 100%;
+}
+
+header {
+    padding: var(--spacing-32);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-container {
+    margin-top: var(--spacing-64);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-16);
+    text-align: center;
+    padding: 0 var(--spacing-32);
+}
+
+img.logo {
+    display: none;
+}
+
+.content-container h1 {
+    font-size: var(--fs-2);
+    font-weight: var(--fw-2-light);
+    color: var(--pink-400);
+    line-height: var(--lh-2);
+    letter-spacing: var(--ls-2);
+    text-transform: uppercase;   
+}
+
+.content-container span.bold {
+    color: var(--gray-900);
+    font-weight: var(--fw-2-semibold);
+}
+
+.content-container p {
+    font-size: var(--fs-4);
+    font-weight: var(--fw-4);
+    line-height: var(--lh-4);
+    color: var(--pink-400);   
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-32);
+    position: relative;
+}
+
+.email-container input {
+    border-radius: 28px;
+    border: 1px solid var(--pink-400);
+    padding: var(--spacing-8) var(--spacing-24);
+    font-family: 'Josefin Sans', sans-serif;
+    width: 280px;
+    height: 48px;
+}
+
+.email-container input::placeholder {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: var(--fs-3);
+    font-weight: var(--fw-3);
+    color: var(--pink-400);
+    line-height: var(--lh-3);
+    opacity: 50%;
+}
+
+.email-container input:focus {
+    outline: 1px solid var(--pink-400);
+}
+
+.error-icon {
+    display: none;
+    position: absolute;
+    left: 67%;
+}
+
+.email-container button {
+    padding: var(--spacing-16) var(--spacing-24);
+    background-image: var(--gradient-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px;
+    border-radius: 28px;
+    width: 64px;
+    height: 48px;
+    position: absolute;
+    left: 80%;
+}
+
+p.error-msg {
+    display: none;
+    color: var(--red-400);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-5);
+    line-height: var(--lh-5);
+    margin-left: var(--spacing-16);
+}
+
+@media only screen and (min-width: 768px) {
+    .content-container {
+        width: 445px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background-image: url('/images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: 150%;
+    }
+    header {
+        padding-left: var(--spacing-64);
+    }
+
+    section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    img.hero-desktop {
+        display: block;
+        order: 2;
+        width: 50vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    img.hero-mobile {
+        display: none;
+    }
+
+    .content-container {
+        text-align: left;
+        align-items: start;
+        padding-left: var(--spacing-64);
+    }
+
+    .content-container img.logo {
+        margin-bottom: 5rem;
+        display: block;
+    }
+
+    header {
+        display: none;
+    }
+}
